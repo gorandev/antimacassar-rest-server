@@ -1,7 +1,7 @@
 require 'active_record'
 
 class Tweet < ActiveRecord::Base
-    establish_connection adapter: "sqlite3", database: "../microservice/db/development.sqlite3"
+    establish_connection adapter: "sqlite3", database: "../ruby-tweet-microservice/db/development.sqlite3"
 
 end
 
