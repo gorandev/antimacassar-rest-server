@@ -13,3 +13,5 @@ gem 'sinatra-activerecord'
 gem 'sqlite3'
 
 gem 'sinatra-rest-api'
+gem 'minitest'
+gem 'minitest-model'

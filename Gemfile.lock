@@ -19,6 +19,7 @@ GEM
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.15.0)
+    minitest-model (0.1.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -60,6 +61,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  minitest
+  minitest-model
   pry
   rake
   sinatra

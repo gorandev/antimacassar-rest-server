@@ -1,21 +1,25 @@
 require 'active_record'
 
+
+
+class Topic < ActiveRecord::Base
+
+  # Database path
+  # take the path from the microservice
+  # this must be set in .env the assignation is for save time
+  PATH_DATABASE = '/usr/src/microservice/db/development.sqlite3'
+
+  establish_connection adapter: "sqlite3", database: PATH_DATABASE
+  has_many  :tweets, dependent: :destroy
+end
+
 class Tweet < ActiveRecord::Base
-    establish_connection adapter: "sqlite3", database: "../ruby-tweet-microservice/db/development.sqlite3"
+  # Database path
+  # take the path from the microservice
+  # this must be set in .env the assignation is for save time
+  PATH_DATABASE = '/usr/src/microservice/db/development.sqlite3'
 
-end
 
-=begin
-t = Tweet.find_by(autor_id: "1032288595313348609")
-Tweet.all.map do  |x|  
-    puts x.autor_id
-    puts x.text
+  establish_connection adapter: "sqlite3", database: PATH_DATABASE
+  belongs_to :topic
 end
-puts t.to_json
-tweet = Tweet.new
-tweet.autor_id  = "1032288595313348609"
-tweet.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie ex nec ligula consectetur rhoncus."
-tweet.topic = "dev example"
-tweet.attachments = ['media 1', 'media 2', 'media 3', 'media 4'].to_json
-tweet.save
-=end
